@@ -18,7 +18,7 @@ export default class Footer extends Component {
                         produtividade.
                         <br /> Desenvolvedor, Cursando Ciências da Computação e
                         em busca de conhecimento/oportunidades nas diversas
-                        linguagens/áreas de programação e TI.{" "}
+                        linguagens/áreas de programação e TI.
                       </p>
                     </aside>
                   </div>
@@ -26,31 +26,17 @@ export default class Footer extends Component {
                   <div className="col-lg-5 col-sm-6">
                     <aside className="f_widget news_widget">
                       <div className="f_title">
-                        <h3>Ultimas Notícias</h3>
+                        <h3>Contato</h3>
                       </div>
+                      <h4>Nome: Paulo Ricardo Da Luz Júnior</h4>
                       <p>
-                        Mantenha-se atualizado com as nossas últimas tendências
+                        Email: 1116505@imed.edu.br
                       </p>
                       <div id="mc_embed_signup">
-                        {/* <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" className="subscribe_form relative"> */}
-                        <div className="input-group d-flex flex-row">
-                          <input
-                            name="EMAIL"
-                            placeholder="Digite seu endereço de email"
-                            type="email"
-                            onInput={e =>
-                              this.setState({ email: e.target.value })
-                            }
-                          />
-                          <button className="btn sub-btn">
-                            <span
-                              className="lnr lnr-arrow-right"
-                              onClick={() => this.registrar()}
-                            ></span>
-                          </button>
+                            <div className="input-group d-flex flex-row">
+                      
                         </div>
                         <div className="mt-10 info"></div>
-                        {/* </form> */}
                       </div>
                     </aside>
                   </div>
