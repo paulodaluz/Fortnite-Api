@@ -13,13 +13,13 @@ export default class Home extends Component {
                     <div className="row">
                       <div className="col-lg-8">
                         <div className="banner_content">
-                          <h2>Paulo Ricardo da Luz Júnior</h2>
-                          <h3>1116505@imed.edu.br</h3>
-                          <p>RA: 1116505</p>
+                          <h2>Seja Bem Vindo</h2>
+                          <h3>Ao maior site de Fortnite Brasileiro</h3>
+                          <p></p>
                           <Link to="/">
-                            <Button className="banner_btn" variant="light">
+                            {/* <Button className="banner_btn" variant="light">
                               Enviar um Email
-                            </Button>
+                            </Button> */}
                           </Link>
                         </div>
                       </div>

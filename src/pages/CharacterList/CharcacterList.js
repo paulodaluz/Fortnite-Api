@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Contato extends Component {
+export default class CharcacterList extends Component {
     render() {
         return (
             <div>
-                <h1>Contato Page</h1>
+                
             </div>
         )
     }
