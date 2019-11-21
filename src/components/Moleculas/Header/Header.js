@@ -114,32 +114,25 @@ export default class Header extends Component {
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
-                        Paginas
+                        Paginas Adm
                       </a>
                       <ul className="dropdown-menu">
+                        
                         <li className="nav-item">
-                          <Link to="/pessoas" className="nav-link">
-                            Pessoas
+                          <Link to="/changeErrands" className="nav-link">
+                            Alterar Recados
                           </Link>
                         </li>
+
                         <li className="nav-item">
-                          <Link to="/filmes" className="nav-link">
-                            filmes
+                          <Link to="/changeCharacter" className="nav-link">
+                            Alterar Personagens
                           </Link>
                         </li>
+
                         <li className="nav-item">
-                          <Link to="/planetas" className="nav-link">
-                            Planetas
-                          </Link>
-                        </li>
-                        <li className="nav-item">
-                          <Link to="/species" className="nav-link">
-                            Espécies
-                          </Link>
-                        </li>
-                        <li className="nav-item">
-                          <Link to="/starships" className="nav-link">
-                            Naves
+                          <Link to="/receivedMessages" className="nav-link">
+                            Mensagens Recebidas
                           </Link>
                         </li>
                       </ul>
