@@ -11,6 +11,7 @@ import ReceivedMessages from "./pages/ReceivedMessages/ReceivedMessages";
 import CharcacterList from "./pages/CharacterList/CharcacterList";
 import Errands from "./pages/CharacterList/CharcacterList";
 import ChangeErrands from './pages/ChangeErrands/ChangeErrands';
+import Register from './pages/Register/Register';
 
 //Components
 import Header from './components/Moleculas/Header/Header';
@@ -25,6 +26,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact={true} component={Home} /> {/* Publica */}
             <Route path="/login" component={Login} />{/* Publica */}
+            <Route path="/register" component={Register} />{/* Publica */}
 
             <Route path="/contact" component={Contact} />{/* Publica */}
             <Route path="/receivedMessages" component={ReceivedMessages} />{/* Privada */}
