@@ -12,7 +12,7 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      email: localStorage.getItem('email'),
       senha: "",
       errorMessage: ''
     };
@@ -21,7 +21,7 @@ export default class Login extends Component {
   logar = async () => {
     this.setState({ loading: true })
     await login(this.state.email, this.state.senha)
-      .then(() => this.props.history.push("/"))
+      .then(() => this.props.history.push("/"), localStorage.setItem("email", this.state.email))
       .catch(erro => this.setState({ errorMessage: erro.message, loading: false }))
   }
 
@@ -40,6 +40,7 @@ export default class Login extends Component {
               <Form.Control
                 type="email"
                 placeholder="Digite seu email"
+                value={this.state.email}
                 onInput={e => this.setState({ email: e.target.value })}
               />
             </Form.Group>

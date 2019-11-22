@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 //Import CSS
 import '../../App.css';
 import './Register.css';
+import { signUp } from '../../services/auth';
 
 export default class Register extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ export default class Register extends Component {
       nome: '',
       idade: '',
       email: '',
-      senha: ''
+      senha: '',
+      errorMessage: ''
     };
   }
 
@@ -24,7 +26,10 @@ export default class Register extends Component {
     var nome = this.state.nome
     var idade = this.state.idade
 
-    console.log(nome, email, senha, idade)
+    signUp(email, senha).then((mensagemSucesso)=> {
+      alert(mensagemSucesso) 
+      this.props.history.push("/login")
+    }).catch((erro) => this.setState({ errorMessage: erro.message}))
   }
 
   render() {
@@ -50,7 +55,7 @@ export default class Register extends Component {
               />
               <Form.Text className="text-muted">
                 Digite um endereço de email válido.
-                                </Form.Text>
+              </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
@@ -75,6 +80,8 @@ export default class Register extends Component {
             <Button variant="dark" className="button-cadastrar"
               onClick={() => this.criar()}
             >Cadastrar</Button>
+
+            <p style={{ color: 'red', textAlign: "center", padding: '5px 0 0 0' }}>{this.state.errorMessage}</p>
 
             <div className="entra-login">
               <Link to="/login">Voce já possui uma conta?</Link>
