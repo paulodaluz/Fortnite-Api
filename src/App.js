@@ -9,6 +9,7 @@ import AcessDenied from './pages/AccessDenied/AcessDenied';
 import Contact from "./pages/Contact/Contact";
 import ReceivedMessages from "./pages/ReceivedMessages/ReceivedMessages";
 import CharcacterList from "./pages/CharacterList/CharcacterList";
+import ChangeCharacter from "./pages/ChangeCharacter/ChangeCharacter";
 import Errands from "./pages/Errands/Errands";
 import ChangeErrands from './pages/ChangeErrands/ChangeErrands';
 import Register from './pages/Register/Register';
@@ -45,7 +46,7 @@ export default class App extends Component {
             <Route path="/contact" component={Contact} />{/* Publica */}
             <PrivateRoute path="/receivedMessages" component={ReceivedMessages} />{/* Privada */}
 
-            <PrivateRoute path="/changeCharacter" component={ReceivedMessages} /> {/* Privada */}
+            <PrivateRoute path="/changeCharacter" component={ChangeCharacter} /> {/* Privada */}
             <Route path="/charcacterList" component={CharcacterList} />{/* Publica */}
 
             <PrivateRoute path="/changeErrands" component={ChangeErrands} />{/* Privada */}

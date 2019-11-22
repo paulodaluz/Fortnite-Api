@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { login } from '../../services/auth';
 
@@ -23,10 +22,6 @@ export default class Login extends Component {
     await login(this.state.email, this.state.senha)
       .then(() => this.props.history.push("/"), localStorage.setItem("email", this.state.email))
       .catch(erro => this.setState({ errorMessage: erro.message, loading: false }))
-  }
-
-  teste () {
-    this.setState({ email: localStorage.getItem('email')}) 
   }
 
   render() {
