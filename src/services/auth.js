@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-var firebaseConfig = {
+/* var firebaseConfig = {
     apiKey: "AIzaSyAlgnxTx3WJD8DLnpCUeC_un1wK4ZnrrK8",
     authDomain: "fortnite-api-d1b6d.firebaseapp.com",
     databaseURL: "https://fortnite-api-d1b6d.firebaseio.com",
@@ -11,16 +11,18 @@ var firebaseConfig = {
     measurementId: "G-81Z8BWSNLT"
 };
 firebase.initializeApp(firebaseConfig);
-
-export const isAuthenticated = () => sessionStorage.getItem("UID") !== null
+ */
+export const isAuthenticated = () => {
+    return sessionStorage.getItem("login") !== null
+}
 
 export const login = (email, password) => {
     return new Promise((resolve, reject) => {
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then((usuario) => {
-                sessionStorage.setItem("UID", usuario.user.uid)
+            .then(() => {
+                sessionStorage.setItem("login", "1")
                 resolve()
             })
             .catch((erro) => {
@@ -29,9 +31,24 @@ export const login = (email, password) => {
     })
 }
 
-export const logoff = () => {
+export const signUp = (email, password) => {
     return new Promise((resolve, reject) => {
-        sessionStorage.removeItem("UID")
-        resolve()
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(() => {
+                resolve("Usuário criado com sucesso!")
+            })
+            .catch(error => {
+                reject(error)
+            })
+    })
+}
+
+export const logoff = () => {
+    sessionStorage.removeItem("login")
+    return new Promise((resolve, reject) => {
+        firebase.auth().signOut()
+            .then(() => resolve())
     })
 }

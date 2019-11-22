@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, ButtonGroup, DropdownButton, Dropdown } from 'react-bootstrap';
 
+import { logoff } from '../../../services/auth';
+
 //Import CSS
 import "./Header.css";
 
@@ -12,7 +14,7 @@ export default class Header extends Component {
       logado: false
     };
   }
- 
+
   render() {
     return (
       <div>
@@ -35,7 +37,12 @@ export default class Header extends Component {
                   <Dropdown.Item eventKey="7"><Link to="/contact">Contato</Link></Dropdown.Item>
                 </DropdownButton>
               </ButtonGroup>
-              <Button>Sair</Button>
+              <Button onClick={
+                () => {
+                  logoff()
+                    .then(() => this.props.history.push("/"))
+                }
+              }>Sair</Button>
             </div>
           </div>
         </header>
