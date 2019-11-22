@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Form } from "react-bootstrap";
 
+// Imports de Services
+import { cadastraMessage } from '../../services/CrudContact';
+
 //Import CSS
 import "../../App.css";
 import "./Contact.css";
@@ -22,8 +25,7 @@ export default class Contato extends Component {
     var email = this.state.email
     var assunto = this.state.assunto
     var mensagem = this.state.mensagem
-
-    console.log(nome, email, assunto, mensagem)
+    cadastraMessage({nome, email, assunto, mensagem})
 
     alert('Recado enviado, agradecemos seu Feedback!')
   }

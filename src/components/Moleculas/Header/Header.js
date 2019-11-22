@@ -23,8 +23,8 @@ export default class Header extends Component {
               <ButtonGroup>
                 <DropdownButton as={ButtonGroup} title="Administrativo" id="bg-nested-dropdown">
                   <Dropdown.Item eventKey="1"><Link to="/receivedMessages">Mensagens Recebidas</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="2"><Link to="/changeCharacter">Alterar Personagens</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="3"><Link to="/changeErrands">Alterar Recados</Link></Dropdown.Item>
+                  <Dropdown.Item eventKey="2"><Link to="/changeCharacter">Criar Personagens</Link></Dropdown.Item>
+                  <Dropdown.Item eventKey="3"><Link to="/changeErrands">Criar Recados</Link></Dropdown.Item>
                 </DropdownButton>
               </ButtonGroup>
               <ButtonGroup>
