@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 
 //Import CSS
 import "../../App.css";
-import "./Errands.css.css";
+import "./Errands.css";
 export default class Errands extends Component {
     constructor(props) {
         super(props);

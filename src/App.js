@@ -9,7 +9,7 @@ import AcessDenied from './pages/AccessDenied/AcessDenied';
 import Contact from "./pages/Contact/Contact";
 import ReceivedMessages from "./pages/ReceivedMessages/ReceivedMessages";
 import CharcacterList from "./pages/CharacterList/CharcacterList";
-import Errands from "./pages/CharacterList/CharcacterList";
+import Errands from "./pages/Errands/Errands";
 import ChangeErrands from './pages/ChangeErrands/ChangeErrands';
 import Register from './pages/Register/Register';
 

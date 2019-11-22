@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { login } from '../../services/auth';
 
 //Import CSS
 import "../../App.css";
@@ -12,13 +13,20 @@ export default class Login extends Component {
     super(props);
     this.state = {
       email: "",
-      senha: ""
+      senha: "",
+      errorMessage: ''
     };
   }
-  logar() {
-    var email = this.state.email;
-    var senha = this.state.senha;
-    console.log(email, senha);
+
+  logar = async () => {
+    this.setState({ loading: true })
+    await login(this.state.email, this.state.senha)
+      .then(() => this.props.history.push("/"))
+      .catch(erro => this.setState({ errorMessage: erro.message, loading: false }))
+  }
+
+  teste () {
+    this.setState({ email: localStorage.getItem('email')}) 
   }
 
   render() {
@@ -56,7 +64,7 @@ export default class Login extends Component {
             >
               Logar
             </Button>
-
+            <p style={{color: 'red', textAlign: "center", padding: '5px 0 0 0'}}>{this.state.errorMessage}</p>
             <div className="criar-cadastro">
               <Link to="/register">Voce ainda não possui uma conta?</Link>
             </div>
