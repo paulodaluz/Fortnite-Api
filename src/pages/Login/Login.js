@@ -58,7 +58,7 @@ export default class Login extends Component {
             </Button>
 
             <div className="criar-cadastro">
-              <Link to="/cadastro">Voce ainda não possui uma conta?</Link>
+              <Link to="/register">Voce ainda não possui uma conta?</Link>
             </div>
           </Form>
         </div>

@@ -1,0 +1,42 @@
+.button-cadastrar {
+    margin-left: 41.8%;
+}
+
+.imagem-background-cadastro {
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/imagemStarWarsCadastro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.painel {
+    margin: auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.25), 0 3px 20px 0 rgba(0,0,0,.15);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.25), 0 3px 20px 0 rgba(0,0,0,.15);
+    background-color: #f9f9fb;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+}
+
+.entra-login {
+    margin: 3% 35.5% 0px 35%;
+}
+
+@media only screen and (max-width: 769px) {
+    
+    .button-cadastrar {
+        margin-left: 35%;
+    }
+    
+    .painel {
+        max-width: 332px;
+        padding: 16px;
+    }
+    .entra-login {
+        margin: 8% 10.5% 0px 23.5%;
+    }
+}

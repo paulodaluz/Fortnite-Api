@@ -1,3 +1,19 @@
-.nav-link {
+header {
+    height: 41px;
+}
+
+.titulo-header {
     color: white;
+    padding: 0% 0px 0px 20px;
+    display: inline;
+}
+
+.titulo-do-header {
+    color: white;
+}
+
+
+.botoes-header {
+    float: right;
+    padding: 0 25px 0 0;
 }
