@@ -38,7 +38,7 @@ export default class ChangeCharacter extends Component {
         await DeletarPersonagens(personagem)
         .then(dados => this.atualizarDados())
         .catch(erro => this.props.history.push("/"))
-}
+    }
 
     criarPesonagem = async () => {
         await cadastraPersonagens(this.state.nome, this.state.valor)
