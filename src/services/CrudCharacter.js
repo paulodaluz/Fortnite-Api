@@ -59,3 +59,29 @@ export const PegarPersonagens = () => {
 
     })
 }
+
+export const PegarTodosPersonagens = () => {
+    return new Promise((resolve, reject) => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                firebase
+                    .database()
+                    .ref(`/personagens`)
+                    .on('value', snapchot => {
+                        let dados = snapchot.val()
+                        if (dados) {
+                            const keys = Object.keys(dados)
+                            const personagensLista = keys.map(id => {
+                                return { ...dados[id], id }
+                            })
+                            resolve(personagensLista)
+                        } else {
+                            resolve([])
+                        }
+                    })
+            } else reject()
+
+        })
+
+    })
+}

@@ -21,8 +21,8 @@ export default class ChangeCharacter extends Component {
     }
 
 
-    atualizarDados = async (i) => {
-        await PegarPersonagens(i)
+    atualizarDados = async () => {
+        await PegarPersonagens()
             .then(dados => this.setState({ personagens: dados }))
             .catch(erro => this.props.history.push("/"))
     }
@@ -81,7 +81,7 @@ export default class ChangeCharacter extends Component {
                             return <tr key={i}>
                                 <th>{i + 1}</th>
                                 <th>{item.nome}</th>
-                                <th>{item.valor}</th>
+                                <th>{item.valor} V-Bucks</th>
                                 <th onClick={() => this.excluirPersonagem(item.id)}>X</th>
                             </tr>
                         })}
