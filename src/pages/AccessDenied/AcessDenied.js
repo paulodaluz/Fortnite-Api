@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as apiEnem from '../../services/apiEnem';
+import * as apiEnem from '../../services/getEnemResults';
 import { Table } from "react-bootstrap";
 
 export default class AcessDenied extends Component {

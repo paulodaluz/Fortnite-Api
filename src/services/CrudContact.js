@@ -23,10 +23,10 @@ export const cadastraMessage = (dados) => {
 
 export const getMensagens = () => {
     return new Promise((resolve, reject) => {
-        firebase.database().ref(`/contatoMessages`)
+        firebase.database().ref(`/contatoMessages/`)
             .on('value', snapchot => {
-                let recados = snapchot.val()
-                resolve(recados)
+                let assunto = snapchot.toJSON()
+                resolve(assunto)
             })
     })
 }

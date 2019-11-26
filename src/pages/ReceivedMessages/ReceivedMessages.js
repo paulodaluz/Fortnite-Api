@@ -15,10 +15,14 @@ export default class ReceivedMessages extends Component {
     }
 
     componentDidMount() {
-        getMensagens().then(mensagens => {
-            this.setState({ mensagens })
-        })
-        console.log(getMensagens())
+        this.receberMensagens();
+    }
+
+    receberMensagens= async () => {
+    await getMensagens().then(mensagens => {
+        this.setState({ mensagens })
+        console.log(this.state.mensagens)
+    })
     }
 
     render() {
