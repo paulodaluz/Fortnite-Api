@@ -11,17 +11,44 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: localStorage.getItem('email'),
+      email: "",
       senha: "",
-      errorMessage: ''
+      errorMessage: '',
+      checked: false
     };
   }
 
+  componentWillMount(){
+    var checkboxStorange = localStorage.getItem('checked');
+    if (checkboxStorange === true || checkboxStorange === 'true'){
+      this.setState({ checked: true })
+    }
+    if (checkboxStorange === false || checkboxStorange === 'false'){
+      this.setState({ checked: false })
+    }
+    if (checkboxStorange === true || checkboxStorange === 'true') {
+     var email = localStorage.getItem('email');
+     this.setState({email: email})
+    }
+  }
+
   logar = async () => {
-    this.setState({ loading: true })
+    var checkbox = this.state.checked
+    if (checkbox === true || checkbox === 'true'){
+      localStorage.setItem('checked', this.state.checked)
+      localStorage.setItem('email', this.state.email)
+    }else{
+      localStorage.setItem('checked', this.state.checked)
+    }
     await login(this.state.email, this.state.senha)
-      .then(() => this.props.history.push("/"), localStorage.setItem("email", this.state.email))
-      .catch(erro => this.setState({ errorMessage: erro.message, loading: false }))
+      .then(() => this.props.history.push("/"))
+      .catch(erro => this.setState({ errorMessage: erro.message}))
+  }
+
+  changeState=()=> {
+    this.setState({
+      checked: !this.state.checked
+    });
   }
 
   render() {
@@ -50,7 +77,7 @@ export default class Login extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Lembre-me" />
+              <Form.Check defaultChecked={this.state.checked} onChange={this.changeState} type="checkbox" label="Lembre-me" />
             </Form.Group>
 
             <Button
