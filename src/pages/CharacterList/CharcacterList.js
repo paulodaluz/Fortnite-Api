@@ -16,7 +16,6 @@ export default class CharcacterList extends Component {
         this.atualizarDados();
     }
 
-
     atualizarDados = async () => {
         await PegarTodosPersonagens()
             .then(dados => {this.setState({ personagens: dados })
