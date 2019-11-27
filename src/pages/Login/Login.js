@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { login } from '../../services/auth';
+import { login } from "../../services/auth";
 
 //Import CSS
 import "../../App.css";
@@ -13,43 +13,43 @@ export default class Login extends Component {
     this.state = {
       email: "",
       senha: "",
-      errorMessage: '',
+      errorMessage: "",
       checked: false
     };
   }
 
-  componentWillMount(){
-    var checkboxStorange = localStorage.getItem('checked');
-    if (checkboxStorange === true || checkboxStorange === 'true'){
-      this.setState({ checked: true })
+  componentWillMount() {
+    var checkboxStorange = localStorage.getItem("checked");
+    if (checkboxStorange === true || checkboxStorange === "true") {
+      this.setState({ checked: true });
     }
-    if (checkboxStorange === false || checkboxStorange === 'false'){
-      this.setState({ checked: false })
+    if (checkboxStorange === false || checkboxStorange === "false") {
+      this.setState({ checked: false });
     }
-    if (checkboxStorange === true || checkboxStorange === 'true') {
-     var email = localStorage.getItem('email');
-     this.setState({email: email})
+    if (checkboxStorange === true || checkboxStorange === "true") {
+      var email = localStorage.getItem("email");
+      this.setState({ email: email });
     }
   }
 
   logar = async () => {
-    var checkbox = this.state.checked
-    if (checkbox === true || checkbox === 'true'){
-      localStorage.setItem('checked', this.state.checked)
-      localStorage.setItem('email', this.state.email)
-    }else{
-      localStorage.setItem('checked', this.state.checked)
+    var checkbox = this.state.checked;
+    if (checkbox === true || checkbox === "true") {
+      localStorage.setItem("checked", this.state.checked);
+      localStorage.setItem("email", this.state.email);
+    } else {
+      localStorage.setItem("checked", this.state.checked);
     }
     await login(this.state.email, this.state.senha)
-      .then(() => this.props.history.push("/"))
-      .catch(erro => this.setState({ errorMessage: erro.message}))
-  }
+      .then(() => this.props.history.push("/acessDenied"))
+      .catch(erro => this.setState({ errorMessage: erro.message }));
+  };
 
-  changeState=()=> {
+  changeState = () => {
     this.setState({
       checked: !this.state.checked
     });
-  }
+  };
 
   render() {
     return (
@@ -77,7 +77,12 @@ export default class Login extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox">
-              <Form.Check defaultChecked={this.state.checked} onChange={this.changeState} type="checkbox" label="Lembre-me" />
+              <Form.Check
+                defaultChecked={this.state.checked}
+                onChange={this.changeState}
+                type="checkbox"
+                label="Lembre-me"
+              />
             </Form.Group>
 
             <Button
@@ -87,7 +92,15 @@ export default class Login extends Component {
             >
               Logar
             </Button>
-            <p style={{color: 'red', textAlign: "center", padding: '5px 0 0 0'}}>{this.state.errorMessage}</p>
+            <p
+              style={{
+                color: "red",
+                textAlign: "center",
+                padding: "5px 0 0 0"
+              }}
+            >
+              {this.state.errorMessage}
+            </p>
             <div className="criar-cadastro">
               <Link to="/register">Voce ainda não possui uma conta?</Link>
             </div>
