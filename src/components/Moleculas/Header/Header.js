@@ -41,7 +41,7 @@ export default class Header extends Component {
               <Button onClick={
                 () => {
                   logoff()
-                    .then(() => createHashHistory().push("/"))
+                    .then(() => createHashHistory().push("/login"))
                 }
               }>Sair</Button>
             </div>

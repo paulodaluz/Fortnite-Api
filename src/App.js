@@ -29,7 +29,7 @@ export default class App extends Component {
         render={props => isAuthenticated() === true ? (
           <Component {...props} />
         ) : (
-            <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+            <Redirect to={{ pathname: "/acessDenied", state: { from: props.location } }} />
           )}
       />
     )
