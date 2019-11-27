@@ -32,7 +32,7 @@ export const getMensagens = () => {
                     var assunto = doc.toJSON().assunto
                     var mensagem = doc.toJSON().mensagem
                     dados.push({
-                        nome, email, assunto, mensagem, 
+                        nome, email, assunto, mensagem
                     }); 
                 })
                 resolve(dados)

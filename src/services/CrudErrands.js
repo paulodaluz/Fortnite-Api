@@ -9,11 +9,17 @@ export const cadastraRecados = (dados) => {
     })
 }
 
-export const PegarRecados = (dados) => {    
+export const PegarRecados = () => {    
     return new Promise((resolve, reject) => {
+        const recados = [];
         firebase.database().ref(`/recados`)
-            .on('value', snapchot => {
-                let recados = snapchot.val()
+            .on('value', snapshot => {
+                snapshot.forEach((doc) => {
+                    var mensagem = doc.toJSON().mensagem
+                    recados.push({
+                        mensagem
+                    });
+                })
                 resolve(recados)
             })
     })

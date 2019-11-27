@@ -17,7 +17,6 @@ export default class Errands extends Component {
         PegarRecados().then(mensagens => {
             this.setState({ mensagens })
         })
-        console.log(PegarRecados())
     }
 
     render() {
@@ -31,12 +30,12 @@ export default class Errands extends Component {
                                 <th>Recado</th>
                             </tr>
 
-                            {/* {this.state.mensagens.map((item, i) => {
+                            {this.state.mensagens.map((item, i) => {
                             return <tr key={i}>
                                 <th>{i + 1}</th>
                                 <th>{item.mensagem}</th>
                             </tr>
-                        })} */}
+                        })}
                         </thead>
                     </Table>
                 </div>
