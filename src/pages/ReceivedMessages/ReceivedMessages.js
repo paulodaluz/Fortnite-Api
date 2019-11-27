@@ -21,7 +21,6 @@ export default class ReceivedMessages extends Component {
     receberMensagens= async () => {
     await getMensagens().then(dados => {
         this.setState({ dados })
-        console.log(this.state.mensagens)
     })
     }
 

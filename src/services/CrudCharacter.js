@@ -7,8 +7,6 @@ export const cadastraPersonagens = (nome, valor) => {
         valor
     }
 
-    console.log(dados)
-
     return new Promise((resolve, reject) => {
         const user = firebase.auth().currentUser
         firebase
@@ -75,7 +73,6 @@ export const PegarTodosPersonagens = () => {
                             snapshot.forEach((docs) => {
                                 var nome = docs.toJSON().nome
                                 var valor = docs.toJSON().valor
-                                console.log(nome)
                                 dados.push({
                                     nome, valor
                                 });
