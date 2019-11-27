@@ -10,7 +10,7 @@ export default class ReceivedMessages extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mensagens: []
+            dados: []
         };
     }
 
@@ -19,8 +19,8 @@ export default class ReceivedMessages extends Component {
     }
 
     receberMensagens= async () => {
-    await getMensagens().then(mensagens => {
-        this.setState({ mensagens })
+    await getMensagens().then(dados => {
+        this.setState({ dados })
         console.log(this.state.mensagens)
     })
     }
@@ -39,7 +39,7 @@ export default class ReceivedMessages extends Component {
                             <th>Mensagem</th>
                         </tr>
 
-                        {/* {this.state.mensagens.map((item, i) => {
+                        {this.state.dados.map((item, i) => {
                             return <tr key={i}>
                                 <th>{i + 1}</th>
                                 <th>{item.nome}</th>
@@ -47,7 +47,7 @@ export default class ReceivedMessages extends Component {
                                 <th>{item.assunto}</th>
                                 <th>{item.mensagem}</th>
                             </tr>
-                        })} */}
+                        })}
                     </thead>
                 </Table>
                 </div>

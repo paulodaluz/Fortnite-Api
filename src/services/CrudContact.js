@@ -23,10 +23,19 @@ export const cadastraMessage = (dados) => {
 
 export const getMensagens = () => {
     return new Promise((resolve, reject) => {
+        const dados = [];
         firebase.database().ref(`/contatoMessages/`)
-            .on('value', snapchot => {
-                let assunto = snapchot.toJSON()
-                resolve(assunto)
+            .on('value', snapshot => {
+                snapshot.forEach((doc) => {
+                    var nome = doc.toJSON().nome
+                    var email = doc.toJSON().email
+                    var assunto = doc.toJSON().assunto
+                    var mensagem = doc.toJSON().mensagem
+                    dados.push({
+                        nome, email, assunto, mensagem, 
+                    }); 
+                })
+                resolve(dados)
             })
     })
 }
