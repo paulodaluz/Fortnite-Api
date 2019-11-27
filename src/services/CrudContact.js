@@ -10,6 +10,7 @@ var firebaseConfig = {
     appId: "1:322158175779:web:1a85d75f8f3fddc9eeb396",
     measurementId: "G-81Z8BWSNLT"
 };
+
 firebase.initializeApp(firebaseConfig);
 
 export const cadastraMessage = (dados) => {
