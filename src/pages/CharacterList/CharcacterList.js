@@ -20,7 +20,7 @@ export default class CharcacterList extends Component {
     atualizarDados = async () => {
         await PegarTodosPersonagens()
             .then(dados => {this.setState({ personagens: dados })
-            console.log(dados)})
+            console.log(this.state.personagens)})
             .catch(erro => this.props.history.push("/"))
     }
 
