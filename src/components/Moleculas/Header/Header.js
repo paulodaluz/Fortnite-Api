@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, ButtonGroup, DropdownButton, Dropdown } from 'react-bootstrap';
+import { createHashHistory } from 'history';
 
 import { logoff } from '../../../services/auth';
 
@@ -40,7 +41,7 @@ export default class Header extends Component {
               <Button onClick={
                 () => {
                   logoff()
-                    .then(() => this.props.history.push("/"))
+                    .then(() => createHashHistory().push("/"))
                 }
               }>Sair</Button>
             </div>

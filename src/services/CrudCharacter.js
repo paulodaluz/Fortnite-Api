@@ -52,9 +52,7 @@ export const PegarPersonagens = () => {
                         }
                     })
             } else reject()
-
         })
-
     })
 }
 
