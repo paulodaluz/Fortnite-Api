@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PegarTodosPersonagens } from '../../services/CrudCharacter';
-import { Form, Button, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 export default class CharcacterList extends Component {
     constructor(props) {
