@@ -16,9 +16,6 @@ export default class Home extends Component {
                           <h3>Ao maior site de Fortnite Brasileiro</h3>
                           <p></p>
                           <Link to="/">
-                            {/* <Button className="banner_btn" variant="light">
-                              Enviar um Email
-                            </Button> */}
                           </Link>
                         </div>
                       </div>
@@ -32,47 +29,11 @@ export default class Home extends Component {
                         >
                           <div className="home_item">
                             <Link
-                              to="/pessoas"
+                              to="/register"
                               className="navbar-brand logo_h"
                               style={{ color: "white" }}
                             >
-                              Pessoas
-                            </Link>
-                          </div>
-                          <div className="home_item">
-                            <Link
-                              to="/filmes"
-                              className="navbar-brand logo_h"
-                              style={{ color: "white" }}
-                            >
-                              Filmes
-                            </Link>
-                          </div>
-                          <div className="home_item">
-                            <Link
-                              to="/planetas"
-                              className="navbar-brand logo_h"
-                              style={{ color: "white" }}
-                            >
-                              Planetas
-                            </Link>
-                          </div>
-                          <div className="home_item">
-                            <Link
-                              to="/species"
-                              className="navbar-brand logo_h"
-                              style={{ color: "white" }}
-                            >
-                              Espécies
-                            </Link>
-                          </div>
-                          <div className="home_item">
-                            <Link
-                              to="/starships"
-                              className="navbar-brand logo_h"
-                              style={{ color: "white" }}
-                            >
-                              Naves
+                              Registrar-se
                             </Link>
                           </div>
                           <div className="home_item">
@@ -82,6 +43,42 @@ export default class Home extends Component {
                               style={{ color: "white" }}
                             >
                               Login
+                            </Link>
+                          </div>
+                          <div className="home_item">
+                            <Link
+                              to="/errands"
+                              className="navbar-brand logo_h"
+                              style={{ color: "white" }}
+                            >
+                              Recados
+                            </Link>
+                          </div>
+                          <div className="home_item">
+                            <Link
+                              to="/contact"
+                              className="navbar-brand logo_h"
+                              style={{ color: "white" }}
+                            >
+                              Contato
+                            </Link>
+                          </div>
+                          <div className="home_item">
+                            <Link
+                              to="/charcacterList"
+                              className="navbar-brand logo_h"
+                              style={{ color: "white" }}
+                            >
+                              Personagens
+                            </Link>
+                          </div>
+                          <div className="home_item">
+                            <Link
+                              to="/acessDenied"
+                              className="navbar-brand logo_h"
+                              style={{ color: "white" }}
+                            >
+                              Enem Page
                             </Link>
                           </div>
                         </div>
