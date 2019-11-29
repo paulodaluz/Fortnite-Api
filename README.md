@@ -8,7 +8,7 @@ O objetivo do trabalho é criar um site em react atendendo aos seguintes requisi
 
 2) O projeto será dividido em duas partes: SITE e ADMINISTRATIVO. Abaixo os requisitos principais de cada uma destas aplicações.
 
-### ADMINISTRATIVO
+- ### ADMINISTRATIVO
 - [x] Deve ser oferecido primeiramente a tela de login, onde somente usuários credenciados podem ter acesso. Nesta mesma tela, deve haver uma opção para registro de novos usuários.
 
 - [x] O usuário terá a opção de ‘Lembre-me, assim quando for acessado o ambiente restrito novamente, já será apresentado o e-mail de acesso. Essa ação é especifica por navegador.
@@ -25,7 +25,7 @@ O objetivo do trabalho é criar um site em react atendendo aos seguintes requisi
 
 - [x] Deve haver uma opção de Logoff, a qual ao ser acionada, deve fazer com que o usuário seja encaminhado a tela de Login e não deve permitir o acesso as telas da ADMINISTRATIVO.
 
-### SITE
+- ### SITE
 - [x] Ao executar o projeto, o site será responsável pela tela inicial, apresentado uma mensagem de boas-vindas.
 
 - [x] No rodapé do site, deve ser apresentado as informações do desenvolvedor,
@@ -45,7 +45,7 @@ usuários.
 exemplo, woodrox-gh-pages, na pasta Templates da disciplina.
 
 
-### GERAL
+- ### GERAL
 - [x] Todos os layouts aplicados devem ser responsivos.
 
 - [x] O Projeto deve ser carregado no github ou bitbucket e compartilhado com o professor o link dos códigos, por e-mail: XXX.
