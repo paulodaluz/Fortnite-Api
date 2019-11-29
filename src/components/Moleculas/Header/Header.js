@@ -25,17 +25,17 @@ export default class Header extends Component {
             <div className='botoes-header'>
               <ButtonGroup>
                 <DropdownButton as={ButtonGroup} title="Administrativo" id="bg-nested-dropdown">
-                  <Dropdown.Item eventKey="1"><Link to="/receivedMessages">Mensagens Recebidas</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="2"><Link to="/changeCharacter">Criar Personagens</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="3"><Link to="/changeErrands">Criar Recados</Link></Dropdown.Item>
+                  <Button variant="light"><Link to="/receivedMessages">Mensagens Recebidas</Link></Button>
+                  <Button variant="light"><Link to="/changeCharacter">Criar Personagens</Link></Button>
+                  <Button variant="light"><Link to="/changeErrands">Criar Recados</Link></Button>
                 </DropdownButton>
               </ButtonGroup>
               <ButtonGroup>
                 <DropdownButton as={ButtonGroup} title="Publico" id="bg-nested-dropdown">
-                  <Dropdown.Item eventKey="4"><Link to="/login">Login</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="5"><Link to="/errands">Recados</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="6"><Link to="/charcacterList">Ver Personagens</Link></Dropdown.Item>
-                  <Dropdown.Item eventKey="7"><Link to="/contact">Contato</Link></Dropdown.Item>
+                  <Button variant="light"><Link to="/login">Login</Link></Button>
+                  <Button variant="light"><Link to="/errands">Recados</Link></Button>
+                  <Button variant="light"><Link to="/charcacterList">Ver Personagens</Link></Button>
+                  <Button variant="light"><Link to="/contact">Contato</Link></Button>
                 </DropdownButton>
               </ButtonGroup>
               <Button onClick={
