@@ -66,7 +66,7 @@ export default class Register extends Component {
               />
               <Form.Text className="text-muted">
                 Digite uma senha de no mínimo 8 caracteres.
-                                </Form.Text>
+              </Form.Text>
             </Form.Group>
 
             <Form.Group>

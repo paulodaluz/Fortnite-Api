@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button, ButtonGroup, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Button, ButtonGroup, DropdownButton } from 'react-bootstrap';
 import { createHashHistory } from 'history';
 
 import { logoff } from '../../../services/auth';
@@ -23,22 +23,22 @@ export default class Header extends Component {
           <div>
             <h1 className='titulo-header'><Link to="/" className='titulo-do-header'>Fortnite API</Link></h1>
             <div className='botoes-header'>
-              <ButtonGroup>
+              <ButtonGroup style={{ margin: '1px 15px 0px 0' }}>
                 <DropdownButton as={ButtonGroup} title="Administrativo" id="bg-nested-dropdown">
                   <Button variant="light"><Link to="/receivedMessages">Mensagens Recebidas</Link></Button>
                   <Button variant="light"><Link to="/changeCharacter">Criar Personagens</Link></Button>
                   <Button variant="light"><Link to="/changeErrands">Criar Recados</Link></Button>
                 </DropdownButton>
               </ButtonGroup>
-              <ButtonGroup>
+              <ButtonGroup style={{ margin: '1px 15px 0px 0' }}>
                 <DropdownButton as={ButtonGroup} title="Publico" id="bg-nested-dropdown">
-                  <Button variant="light"><Link to="/login">Login</Link></Button>
-                  <Button variant="light"><Link to="/errands">Recados</Link></Button>
-                  <Button variant="light"><Link to="/charcacterList">Ver Personagens</Link></Button>
-                  <Button variant="light"><Link to="/contact">Contato</Link></Button>
+                  <div><Button variant="light"><Link to="/login">Login</Link></Button></div>
+                  <div><Button variant="light"><Link to="/errands">Recados</Link></Button></div>
+                  <div><Button variant="light"><Link to="/charcacterList">Ver Personagens</Link></Button></div>
+                  <div><Button variant="light"><Link to="/contact">Contato</Link></Button></div>
                 </DropdownButton>
               </ButtonGroup>
-              <Button onClick={
+              <Button style={{ margin: '1px 15px 0px 0' }} onClick={
                 () => {
                   logoff()
                     .then(() => createHashHistory().push("/login"))
