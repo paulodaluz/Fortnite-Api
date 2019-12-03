@@ -1,5 +1,5 @@
 # Descrição do Projeto
-Este projeto foi desenvolvido com o intuito de atender aos requisitos de um trabalho da faculdade, condizente a matéria de Tópicos de Programação Web.
+Este projeto foi desenvolvido com o intuito de atender aos requisitos de um trabalho da faculdade, condizente a matéria de Tópicos Especiais de Programação Web.
 
 ## Objetivo do Projeto
 O objetivo do trabalho é criar um site em react atendendo aos seguintes requisitos:
